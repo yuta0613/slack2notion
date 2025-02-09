@@ -35,8 +35,8 @@ func addToNotion(client *notionapi.Client, pageTitle string, content string) {
 		Children: []notionapi.Block{
 			notionapi.ParagraphBlock{
 				BasicBlock: notionapi.BasicBlock{
-					Object: "block",                      // ここを明示
-					Type:   notionapi.BlockTypeParagraph, // ここを明示
+					Object: "block",
+					Type:   notionapi.BlockTypeParagraph,
 				},
 				Paragraph: notionapi.Paragraph{
 					RichText: []notionapi.RichText{
