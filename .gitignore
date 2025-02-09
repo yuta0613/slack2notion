@@ -1,0 +1,16 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Build output
+/bin
+/pkg
+
+# Dependency directories
+/vendor/
+
+# Local environment variables
+.envrc
