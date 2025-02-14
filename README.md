@@ -17,14 +17,18 @@ This project fetches conversations and thread summaries from Slack and saves the
 ## Usage
 
 ### Running Slack Messages to Notion
+
 To run the default mode which fetches Slack messages and saves them to Notion, execute:
-```
+
+```bash
 go run main.go
 ```
 
 ### Running Thread Summaries
+
 To fetch thread summaries from Slack and save them to Notion, run:
-```
+
+```bash
 go run main.go thread-summary
 ```
 
