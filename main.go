@@ -1,4 +1,3 @@
-// main.go
 package main
 
 import (
@@ -16,7 +15,6 @@ func addToNotion(client *notionapi.Client, pageTitle string, content string) {
 		log.Println("Skipping empty content")
 		return
 	}
-	// Example: Adding content to a Notion database
 	page := notionapi.PageCreateRequest{
 		Parent: notionapi.Parent{
 			DatabaseID: notionapi.DatabaseID(os.Getenv("NOTION_DATABASE_ID")),
@@ -58,13 +56,14 @@ func addToNotion(client *notionapi.Client, pageTitle string, content string) {
 }
 
 func main() {
+	//todo: improve this to use a flag package
+	// Check if the user wants to run the thread summary
 	if len(os.Args) > 1 && os.Args[1] == "thread-summary" {
 		runThreadSummary()
 		return
 	}
 	api := slack.New(os.Getenv("SLACK_BOT_TOKEN"))
 
-	// Example: Fetching Slack messages
 	channelID := os.Getenv("SLACK_CHANNEL_ID")
 	params := &slack.GetConversationHistoryParameters{
 		ChannelID: channelID,
