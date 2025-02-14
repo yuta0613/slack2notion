@@ -58,6 +58,10 @@ func addToNotion(client *notionapi.Client, pageTitle string, content string) {
 }
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "thread-summary" {
+		runThreadSummary()
+		return
+	}
 	api := slack.New(os.Getenv("SLACK_BOT_TOKEN"))
 
 	// Example: Fetching Slack messages
