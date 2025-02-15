@@ -40,20 +40,20 @@ func runThreadSummary() {
 			}
 
 			// Build a structured summary for the thread
-			summary := "Thread Summary:\n"
-			summary += fmt.Sprintf("Parent Message: %s\n", message.Text)
+			summary := "## Thread Summary\n\n"
+			summary += fmt.Sprintf("**Parent Message:** %s\n\n", message.Text)
 			replyCount := len(replies) - 1
-			summary += fmt.Sprintf("Number of Replies: %d\n", replyCount)
+			summary += fmt.Sprintf("**Number of Replies:** %d\n\n", replyCount)
 			if replyCount > 0 {
-				summary += "Replies:\n"
+				summary += "**Replies:**\n"
 				for i, reply := range replies {
 					if i == 0 {
 						continue
 					}
-					summary += fmt.Sprintf("  - %s\n", reply.Text)
+					summary += fmt.Sprintf("- %s\n", reply.Text)
 				}
 			}
-			summary += "-----\n"
+			summary += "\n---\n\n"
 
 			// Print the summary to the console
 			fmt.Print(summary)
